@@ -24,11 +24,12 @@ const PORT = process.env.PORT || 3000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
+// default route for checking if the server is responding
 app.use('/',  (req, res, next) =>{
     res.send("Max movie server is working");
 });
 
-
+// starting the server
 server.listen(PORT, () => {
     console.log("Server Listening on Port: "+ PORT);
 });
