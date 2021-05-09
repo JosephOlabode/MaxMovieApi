@@ -9,16 +9,7 @@ const app = express();
 
 
 //connecting the mysql database
-const con = mysql.createConnection({
-    host: "127.0.0.1",
-    user: "root",
-    password: "password"
-});
-
-con.connect(function(err) {
-    if (err) throw err;
-    console.log("Mysql connected successfully");
-});
+import('./db.js'); // DB connection
 
 // Allowing cross origin access with server to server communication
 app.use(cors());
