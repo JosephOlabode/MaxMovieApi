@@ -1,0 +1,29 @@
+{
+  "name": "max-movie-api",
+  "version": "1.0.0",
+  "description": "War Movie Api",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JosephOlabode/MaxMovieApi.git"
+  },
+  "author": "Olabode Joseph Oluwaseun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JosephOlabode/MaxMovieApi/issues"
+  },
+  "homepage": "https://github.com/JosephOlabode/MaxMovieApi#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "lodash": "^4.17.21",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.7",
+    "winston": "^3.3.3"
+  }
+}
