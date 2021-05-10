@@ -26,15 +26,15 @@ function filterCharacterByGender(filter, data) {
 }
 
 function generateCharacterMetaData(sortedCharacter) {
-    let sum = 0;
-    sortedCharacter.forEach((n) => {
-        sum += parseInt(n.height);
+    let characterSum = 0;
+    sortedCharacter.forEach((character) => {
+        characterSum += parseInt(character.height);
     })
 
     return  {
         totalNumberOfCharacters: sortedCharacter.length.toString() ,
-        heightOfCharactersInCM: sum.toString() + ".00 cm",
-        heightOfCharactersInFeet: (sum/30.48).toFixed(2) + " ft"
+        heightOfCharactersInCM: characterSum.toString() + ".00 cm",
+        heightOfCharactersInFeet: (characterSum/30.48).toFixed(2) + " ft"
     }
 }
 
