@@ -1,9 +1,9 @@
-const winston = require('winston');
+import winston from 'winston';
 const { format } = winston;
 const {combine, prettyPrint,  errors, metadata} = format;
 
 // this enable easy calling of the handler outside of this file
-module.exports = (err, req, res, next) => {
+export default function error (err, req, res, next) {
     const logger = winston.createLogger({
         level: 'error',
         format: combine(

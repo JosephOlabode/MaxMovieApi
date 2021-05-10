@@ -2,13 +2,15 @@ import express from 'express';
 import cors from 'cors'
 import bodyParser from "body-parser";
 import http from 'http';
-
+/*const generalErrorHandler = require('./Error/general-error-handler');*/
+/*const generalErrorHandler = import('./Error/general-error-handler.js');*/
+import error from './Error/general-error-handler.js';
 
 const app = express();
 
 
 //connecting the mysql database
-import('./db.js'); // DB connection
+import('./db.js');
 
 // Allowing cross origin access with server to server communication
 app.use(cors());
@@ -32,6 +34,10 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use('/',  (req, res, next) =>{
     res.send("Max movie server is working");
 });
+
+
+// general error handler for the server
+app.use(error);
 
 // starting the server
 server.listen(PORT, () => {
