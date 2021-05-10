@@ -3,6 +3,8 @@ import cors from 'cors'
 import bodyParser from "body-parser";
 import http from 'http';
 import generalErrorHandler from './Error/general-error-handler.js';
+import {movieRouter} from './Routes/movie-api.js';
+import {characterRouter} from './Routes/character-api.js';
 
 const app = express();
 
@@ -24,14 +26,12 @@ const server = http.createServer(app);
 // defining a constant port number
 const PORT = process.env.PORT || 3000;
 
-import {movieRouter} from './Routes/movie-api.js';
-import {characterRouter} from './Routes/character-api.js';
-
 
 // this allows parsing of json data
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
+// Routes
 app.use('/api/movies', movieRouter);
 app.use('/api/character', characterRouter);
 

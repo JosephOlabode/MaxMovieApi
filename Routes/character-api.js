@@ -1,7 +1,7 @@
 import express from "express";
-const router = express.Router();
 import characterHelperMethods from '../Helper Methods/character-helper.js'
 
+const router = express.Router();
 
 router.get('/allCharacters', async (req, res, next) => {
     const sortParameter = req.query.sort;
