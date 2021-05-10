@@ -10,18 +10,24 @@ router.get('/allCharacters', async (req, res, next) => {
     try {
         if(sortParameter.toString() === 'name') {
 
-            const sortedData = await characterHelperMethods.sortMovieCharactersByName(gender);
-            res.status(200).send({metadata: characterHelperMethods.generateMetaData(sortedData), data: sortedData});
+            const sortedCharacterList = await characterHelperMethods.sortMovieCharactersByName(gender);
+            res.status(200).send({
+                metadata: characterHelperMethods.generateCharacterMetaData(sortedCharacterList),
+                data: sortedCharacterList
+            });
 
         } else if(sortParameter.toString() === 'height') {
 
-            const sortedData = await characterHelperMethods.sortCharactersByHeight(gender);
+            const sortedCharacterList = await characterHelperMethods.sortMovieCharactersByHeight(gender);
 
-            res.status(200).send({metadata: characterHelperMethods.generateCharacterMetaData(sortedData), data: sortedData});
+            res.status(200).send({
+                metadata: characterHelperMethods.generateCharacterMetaData(sortedCharacterList),
+                data: sortedCharacterList
+            });
 
         }
-    } catch(e) {
-        res.status(404).send({err: e});
+    } catch(err) {
+        res.status(404).send({error: err});
     }
 });
 
