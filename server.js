@@ -24,9 +24,14 @@ const server = http.createServer(app);
 // defining a constant port number
 const PORT = process.env.PORT || 3000;
 
+import {movieRouter} from './Routes/movie-api.js';
+
+
 // this allows parsing of json data
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+
+app.use('/api/movies', movieRouter);
 
 // default route for checking if the server is responding
 app.use('/',  (req, res, next) =>{

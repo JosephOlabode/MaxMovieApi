@@ -20,3 +20,5 @@ router.get('/allMovies', (req, res, next) => {
             res.send({err: caughtError});
         })
 });
+
+export { router as movieRouter };
