@@ -45,6 +45,10 @@ app.use('/',  (req, res, next) =>{
 app.use(generalErrorHandler);
 
 // starting the server
-server.listen(PORT, () => {
+const testServerInstance = server.listen(PORT, () => {
     console.log("Server Listening on Port: "+ PORT);
 });
+
+
+// this enable the usage of the server instance for testing purpose
+export default testServerInstance;
