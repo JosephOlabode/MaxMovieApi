@@ -17,7 +17,7 @@ router.get('/allCharacters', async (req, res, next) => {
 
             const sortedData = await characterHelperMethods.sortCharactersByHeight(gender);
 
-            res.status(200).send({metadata: characterHelperMethods.generateMetaData(sortedData), data: sortedData});
+            res.status(200).send({metadata: characterHelperMethods.generateCharacterMetaData(sortedData), data: sortedData});
 
         }
     } catch(e) {
