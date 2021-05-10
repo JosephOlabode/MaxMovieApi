@@ -10,4 +10,3 @@ con.connect(function(err) {
     if (err) throw err;
     console.log("Mysql connected successfully");
 });
-/*throw Error('this error');*/

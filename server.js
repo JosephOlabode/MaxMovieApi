@@ -2,9 +2,7 @@ import express from 'express';
 import cors from 'cors'
 import bodyParser from "body-parser";
 import http from 'http';
-/*const generalErrorHandler = require('./Error/general-error-handler');*/
-/*const generalErrorHandler = import('./Error/general-error-handler.js');*/
-import error from './Error/general-error-handler.js';
+import generalErrorHandler from './Error/general-error-handler.js';
 
 const app = express();
 
@@ -37,7 +35,7 @@ app.use('/',  (req, res, next) =>{
 
 
 // general error handler for the server
-app.use(error);
+app.use(generalErrorHandler);
 
 // starting the server
 server.listen(PORT, () => {
