@@ -1,6 +1,7 @@
 export default {
-    dbHost: "127.0.0.1",
-    dbUser: "root",
+    dbHost: "db4free.net",
+    dbUser: "rootprime",
     dbPassword: "password",
-    dbName: "maxmovie"
+    dbName: "vascondb",
+    dbPort: "3306"
 }

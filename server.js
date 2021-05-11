@@ -13,7 +13,7 @@ const app = express();
 
 
 //connecting the mysql database
-import('./db.js');
+//import('./db.js');
 
 
 const swaggerDefinition = {

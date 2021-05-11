@@ -5,7 +5,8 @@ const con = mysql.createConnection({
     HOST: dbConfiguration.dbHost,
     USER: dbConfiguration.dbUser,
     PASSWORD: dbConfiguration.dbPassword,
-    DB: dbConfiguration.dbName
+    DB: dbConfiguration.dbName,
+    /*PORT: dbConfiguration.dbPort*/
 });
 
 con.connect(function(err) {
