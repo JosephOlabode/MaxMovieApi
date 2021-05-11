@@ -1,10 +1,11 @@
 import mysql from "mysql";
+import dbConfiguration from './Configuration/db.config.js'
 
 const con = mysql.createConnection({
-    host: "127.0.0.1",
-    user: "root",
-    password: "password",
-    db: "maxmovie"
+    HOST: dbConfiguration.dbHost,
+    USER: dbConfiguration.dbUser,
+    PASSWORD: dbConfiguration.dbPassword,
+    DB: dbConfiguration.dbName
 });
 
 con.connect(function(err) {
