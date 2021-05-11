@@ -12,8 +12,8 @@ describe('Character Sorting', () => {
     })
 });
 
-describe('', () => {
-    it('should generate metadata of the data', () => {
+describe('Generate Metadata', () => {
+    it('should generate metadata for the given data', () => {
         const data = [
             {
                 "name": "Joseph Olabode",
@@ -40,4 +40,8 @@ describe('', () => {
             }
         );
     });
+})
+
+describe('Filter data', () => {
+    it('should return filtered data')
 })
