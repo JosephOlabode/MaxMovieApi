@@ -41,5 +41,6 @@ function generateCharacterMetaData(sortedCharacters) {
 export default {
     generateCharacterMetaData,
     sortMovieCharactersByHeight,
-    sortMovieCharactersByName
+    sortMovieCharactersByName,
+    filterCharacterByGender
 }
