@@ -2,6 +2,9 @@ import express from 'express';
 import cors from 'cors'
 import bodyParser from "body-parser";
 import http from 'http';
+import swaggerJSDoc from 'swagger-jsdoc';
+import swaggerUi from 'swagger-ui-express';
+
 import generalErrorHandler from './Error/general-error-handler.js';
 import {movieRouter} from './Routes/movie-api.js';
 import {characterRouter} from './Routes/character-api.js';
@@ -11,6 +14,44 @@ const app = express();
 
 //connecting the mysql database
 import('./db.js');
+
+
+const swaggerDefinition = {
+    openapi: '3.0.0',
+    info: {
+        title: 'Swagger for Max Movie API',
+        version: '1.0.0',
+        description:
+            'This is the test api for the max movie test',
+        license: {
+            name: 'Licensed Under MIT',
+            url: 'https://spdx.org/licenses/MIT.html',
+        },
+        contact: {
+            name: 'Olabode Joseph Oluwaseun',
+        },
+    },
+    servers: [
+        {
+            url: 'http://localhost:3000',
+            description: 'Development server',
+        },
+        {
+            url: "https://",
+            description: 'Live server'
+        }
+    ],
+};
+
+// swagger options
+const options = {
+    swaggerDefinition,
+    // Paths to files containing OpenAPI definitions
+    apis: ['./Routes/*.js'],
+};
+
+
+const swaggerSpec = swaggerJSDoc(options);
 
 // Allowing cross origin access with server to server communication
 app.use(cors());
@@ -40,6 +81,8 @@ app.use('/',  (req, res, next) =>{
     res.send("Max movie server is working");
 });
 
+// swagger api middleware
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // general error handler for the server
 app.use(generalErrorHandler);
