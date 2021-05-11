@@ -3,7 +3,8 @@ import mysql from "mysql";
 const con = mysql.createConnection({
     host: "127.0.0.1",
     user: "root",
-    password: "password"
+    password: "password",
+    db: "maxmovie"
 });
 
 con.connect(function(err) {
