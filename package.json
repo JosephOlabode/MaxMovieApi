@@ -5,7 +5,8 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "test": "jest --watchAll --verbose --runInBand --no-cache "
+    "test": "jest --watchAll --verbose --runInBand --no-cache ",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
