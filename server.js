@@ -76,13 +76,14 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use('/api/movies', movieRouter);
 app.use('/api/character', characterRouter);
 
+// swagger api middleware
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+
 // default route for checking if the server is responding
 app.use('/',  (req, res, next) =>{
     res.send("Max movie server is working");
 });
 
-// swagger api middleware
-app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // general error handler for the server
 app.use(generalErrorHandler);
