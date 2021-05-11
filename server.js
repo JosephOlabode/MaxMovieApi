@@ -36,10 +36,10 @@ const swaggerDefinition = {
             url: 'http://localhost:3000',
             description: 'Development server',
         },
-        {
+        /*{
             url: "https://",
             description: 'Live server'
-        }
+        }*/
     ],
 };
 
@@ -77,7 +77,7 @@ app.use('/api/movies', movieRouter);
 app.use('/api/character', characterRouter);
 
 // swagger api middleware
-app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+app.use('/max-movie-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // default route for checking if the server is responding
 app.use('/',  (req, res, next) =>{
